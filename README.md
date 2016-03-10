@@ -1,4 +1,4 @@
-#SBSS Bot
+#avast Bot
 
 * **تمامی پلاگین ها فارسی میباشند**
 
@@ -68,8 +68,6 @@
   > حذف غیرفعالین ,
   > حذف غیرفعالین  ,
 
-#It Will Be Edit Soon
 
-#Wiki Soon...
 
-#Powered By [@SBSS_Team](telegram.me/Sbss_Team)
+#Powered By [@avast_team](telegram.me/avast_team)
