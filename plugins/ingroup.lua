@@ -268,7 +268,7 @@ local function show_group_settingsmod(msg, data, target)
     	welcome = data[tostring(msg.to.id)]['settings']['welcome']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "تنظیمات گروه:\n⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙\n>قفل نام گروه : "..settings.lock_name.."\n>قفل عکس گروه : "..settings.lock_photo.."\n>قفل اعضا : "..settings.lock_member.."\n>ممنوعیت ارسال لینک : "..lock_link.."\n>حساسیت اسپم : "..NUM_MSG_MAX.."\n>قفل ربات ها : "..bots_protection.."\n>قفل تگ : "..tag.."\n>قفل اینگلیسی :"..lock_english.."\n>قفل فحش : "..lock_badw.."\n>Sbss Open Source Version\n"
+  local text = "تنظیمات گروه:\n⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙\n>♻️قفل نام گروه : "..settings.lock_name.."\n>♻️قفل عکس گروه : "..settings.lock_photo.."\.>♻️قفل اعضا : "..settings.lock_member.."\n>♻️ممنوعیت ارسال لینک : "..lock_link.."\n>♻️حساسیت اسپم : "..NUM_MSG_MAX.."\n>♻️قفل ربات ها : "..bots_protection.."\n>♻️قفل تگ"..tag.."\n>♻️قفل اینگلیسی :"..lock_english.."\n>♻️قفل فحش : "..lock_badw.."\n>اگر موقع تنظیم علامت قفل مشاهده کردید مورد قفل و اگر قفل همراه با کلید بود یعنی از قبل قفل است و اگر قفل باز بود مورد ما باز است!
   return text
 end
 
@@ -296,11 +296,11 @@ local function lock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
-    return 'عربی از قبل قفل است'
+    return '🔐
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'عربی قفل شد'
+    return '🔒'
   end
 end
 
@@ -310,11 +310,11 @@ local function unlock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'no' then
-    return 'عربی از قبل آزاد است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'عربی آزاد شد'
+    return '🔓'
   end
 end
 
@@ -324,11 +324,11 @@ local function lock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
   if group_tag_lock == 'yes' then
-    return 'تگ کردن از قبل قفل است🔒'
+    return '🔐'
   else
     data[tostring(target)]['settings']['tag'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تگردن ممنوع شد✅🔒'
+    return '🔒'
   end
 end
 
@@ -338,11 +338,11 @@ local function unlock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
   if group_tag_lock == 'no' then
-    return 'تگ کردن از قبل آزاد است🔓'
+    return '🔐'
   else
     data[tostring(target)]['settings']['tag'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'تگ کردن آزاد شد✅🔓'
+    return '🔓'
   end
 end
 
@@ -352,11 +352,11 @@ local function lock_group_username(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['lock_english']
   if group_english_lock == 'yes' then
-    return 'ایگلیسی از قبل قفل است🔒'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_english'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'اینگلیسی قفل شد✅🔒'
+    return '🔒'
   end
 end
 
@@ -366,11 +366,11 @@ local function unlock_group_english(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['lock_english']
   if group_english_lock == 'no' then
-    return 'اینگلیسی از قبل باز است🔓'
+    return '🔐
   else
     data[tostring(target)]['settings']['lock_english'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'اینگلیسی ازاد شد✅🔓'
+    return '🔓'
   end
 end
 
@@ -380,11 +380,11 @@ local function lock_group_badw(msg, data, target)
   end
   local group_badw_lock = data[tostring(target)]['settings']['lock_badw']
   if group_badw_lock == 'yes' then
-    return 'فحاشی از قبل ممنوع است🔒'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_badw'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'فحاشی قفل شد✅🔒'
+    return '🔒'
   end
 end
 
@@ -394,11 +394,11 @@ local function unlock_group_badw(msg, data, target)
   end
   local group_badw_lock = data[tostring(target)]['settings']['lock_badw']
   if group_badw_lock == 'no' then
-    return 'فحاشی از قبل آزاد است🔓'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_badw'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'فحاشی آزاد شد✅🔓'
+    return '🔓'
   end
 end
 
@@ -408,11 +408,11 @@ local function lock_group_link(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return 'ارسال لینک از قبل ممنوع است🔒'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'ارسال لینک ممنوع شد✅🔒'
+    return '🔒'
   end
 end
 
@@ -422,11 +422,11 @@ local function unlock_group_link(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return 'ارسال لینک از قبل آزاد است🔓'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'lارسال لینک آزاد شد✅🔓'
+    return '🔓'
   end
 end
 
@@ -436,11 +436,11 @@ local function lock_group_username(msg, data, target)
   end
   local group_username_lock = data[tostring(target)]['settings']['lock_username']
   if group_username_lock == 'yes' then
-    return 'یوزر نیم از قبل قفل است🔒'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_username'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'یوزر نیم آزاد شد✅🔒'
+    return '🔓'
   end
 end
 
@@ -450,11 +450,11 @@ local function unlock_group_username(msg, data, target)
   end
   local group_username_lock = data[tostring(target)]['settings']['lock_username']
   if group_username_lock == 'no' then
-    return 'ارسال یوزر نیم از قبل آزاد است🔓'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_username'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'ارسال یوزر نیم آژاد شد✅🔓'
+    return '🔓'
   end
 end
 
@@ -464,11 +464,11 @@ local function lock_group_bots(msg, data, target)
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'yes' then
-    return 'قفل ربات ها از قبل فعال است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_bots'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'ورود ربات ها قفل شد'
+    return '🔒'
   end
 end
 
@@ -478,11 +478,11 @@ local function unlock_group_bots(msg, data, target)
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'no' then
-    return 'ورود ربات ها از قبل آزاد است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_bots'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'ورود ربات ها ازاد شد'
+    return '🔓'
   end
 end
 
@@ -493,12 +493,12 @@ local function lock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'yes' then
-    return 'نام گروه از قبل قفل است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_name'] = 'yes'
     save_data(_config.moderation.data, data)
     rename_chat('chat#id'..target, group_name_set, ok_cb, false)
-    return 'نام گروه قفل شد'
+    return '🔒'
   end
 end
 local function unlock_group_namemod(msg, data, target)
@@ -508,11 +508,11 @@ local function unlock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'no' then
-    return 'نام گروه از قبل باز است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_name'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'نام گروه باز شد'
+    return '🔓'
   end
 end
 local function lock_group_floodmod(msg, data, target)
@@ -521,11 +521,11 @@ local function lock_group_floodmod(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'yes' then
-    return 'ارسال پیام سریع ممنوع از قبل ممنوع بود'
+    return '🔐'
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'اسپم قفل شد'
+    return '🔒'
   end
 end
 
@@ -535,11 +535,11 @@ local function unlock_group_floodmod(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return 'اسپم قفل نیست!'
+    return '🔐'
   else
     data[tostring(target)]['settings']['flood'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'ارسال سریع پیام آزاد شد'
+    return '🔓'
   end
 end
 
@@ -549,12 +549,12 @@ local function lock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'yes' then
-    return 'ورود اعضا از قبل قفل است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return 'ورود اعضا قفل شد'
+  return '🔒'
 end
 
 local function unlock_group_membermod(msg, data, target)
@@ -563,11 +563,11 @@ local function unlock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'no' then
-    return 'عضو گیری ازاد است'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_member'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'عضو گیری ازاد شد'
+    return '🔓'
   end
 end
 
@@ -577,7 +577,7 @@ local function lock_group_leave(msg, data, target)
   end
   local leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
   if leave_ban == 'yes' then
-    return 'خروج از قبل ممنوع بود'
+    return '🔐'
   else
     data[tostring(msg.to.id)]['settings']['leave_ban'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -591,11 +591,11 @@ local function unlock_group_leave(msg, data, target)
   end
   local leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
   if leave_ban == 'no' then
-    return 'خروج آزاد بود'
+    return '🔐'
   else
     data[tostring(msg.to.id)]['settings']['leave_ban'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'خروج آزاد شد'
+    return '🔓'
   end
 end
 
@@ -605,11 +605,11 @@ local function unlock_group_photomod(msg, data, target)
   end
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'no' then
-    return 'عکس گروه قفل نیست'
+    return '🔐'
   else
     data[tostring(target)]['settings']['lock_photo'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'عکس گروه باز شد'
+    return '🔓'
   end
 end
 
